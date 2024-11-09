@@ -22,9 +22,8 @@
         .sidebar {
             background-color: #18191A;
             width: 280px;
-            padding: 2rem;
+            padding: 4rem;
             position: fixed;
-            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -77,13 +76,9 @@
             text-decoration: none;
             font-size: 1.1rem;
             transition: color 0.3s ease;
-
         }
 
-        .nav-menu a:hover {
-            color: #ff4444;
-        }
-
+        .nav-menu a:hover,
         .nav-menu a.active {
             color: #ff4444;
         }
@@ -118,10 +113,14 @@
 
         .service-card {
             background: white;
-            padding: 2.5rem;
+            padding: 2rem;
             border: 1px solid #eee;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 450px; /* Fixed height for uniform card size */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .service-card:hover {
@@ -130,31 +129,45 @@
         }
 
         .service-icon {
-            width: 470px;
-            height: 470px;
-            margin: 0 auto 1.5rem;
+            width: 100%;
+            max-width: 150px;
+            margin: 0 auto;
         }
 
         .service-icon img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: contain;
         }
 
         .service-title {
             color: #333;
             font-size: 1.3rem;
-            margin-bottom: 1rem;
+            margin-top: 1rem;
         }
 
         .service-description {
-            color:black;
+            color: black;
             line-height: 1.6;
             font-size: 0.95rem;
+            flex-grow: 1; /* Makes the description fill remaining space */
+            margin-top: 1rem;
         }
 
         /* Media Queries */
+        @media (min-width: 1600px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
         @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -163,7 +176,6 @@
         @media (max-width: 768px) {
             .sidebar {
                 width: 100%;
-                height: auto;
                 position: relative;
                 padding: 1rem;
             }
@@ -212,69 +224,70 @@
             <p class="status">Available for work</p>
         </div>
         <ul class="nav-menu">
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="media about.html">About</a></li>
-            <li><a href="media service.html" class="active">Services</a></li>
-            <li><a href="media client.html">Client</a></li>
-            <li><a href="media contact.html">contact</a></li>
-
+            <li><a href="index_media.html">Home</a></li>
+            <li><a href="media_about.html">About</a></li>
+            <li><a href="media_service.html" class="active">Services</a></li>
+            <li><a href="media_client.html">Clients</a></li>
+            <li><a href="media_contact.html">Contact</a></li>
         </ul>
     </aside>
 
     <main class="main-content">
         <div class="services-header">
             <h1>My Services</h1>
-            <p>Services i offer to my clients</p>
+            <p>Services I offer to my clients</p>
         </div>
 
         <div class="services-grid">
+            <!-- Sample Service Cards -->
             <div class="service-card">
                 <div class="service-icon">
-                    <img src="elctro.avif" alt="Alex Smith Profile">
+                    <h3 class="service-title">Electronics Product</h3>
+                    <img src="elctro.avif" alt="Electronics Products">
                 </div>
-                <h3 class="service-title">ELECTRONICS PRODUCT</h3>
-                <p class="service-description"> entertainment (flatscreen TVs, television sets, 
-                    MP3 players, video recorders, DVD players, radio receivers, etc.) communications (telephones, 
-                    cell phones, e-mail-capable personal computers, desktop computers, laptops, printers, paper shredders, etc.)</p>
+         
+                <p class="service-description">High-quality electronic items including TVs, MP3 players, computers, and more.</p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">
-                    <img src="fashion and design.avif" alt="Alex Smith Profile">
+                    <h3 class="service-title">Fashion Design</h3>
+                    <img src="fashion and design.avif" alt="Fashion Design">
                 </div>
-                <h3 class="service-title">Fashion Design</h3>
-                <p class="service-description">"Our website offers a curated selection of fashion items that reflect both the latest trends
-                    and timeless styles. From elegant evening wear to everyday casuals, we bring you pieces that
-                     suit every occasion and personality. Each item is chosen with care to ensure quality, comfort,
-                      and style, catering to the diverse tastes and preferences of our customers."</p>
+               
+                <p class="service-description">Curated fashion collections reflecting both trends and timeless styles.</p>
             </div>
 
             <div class="service-card">
-                
                 <div class="service-icon">
                     <h3 class="service-title">Home Furniture</h3>
-                    <img src=" home.webp" alt="Alex Smith Profile">
+                    <img src="home.webp" alt="Home Furniture">
                 </div>
-                
-                <p class="service-description">HOME FURNITURE</h2> </strong><br>
-                   "we understand that your home is your sanctuary,
-                   a place where comfort and functionality meet. That's why our Home Essentials
-                    category offers a carefully curated selection of products designed to enhance your living space.
-                     From cozy bedding and stylish furniture to practical kitchen tools and storage solutions,
-                      we provide high-quality items that fit seamlessly into your daily life. Whether you're 
-                      looking to organize, redecorate, or simply add a touch of warmth, our Home Essentials are 
-                      tailored to meet your needs."
-        </div>
-        <div class="service-card">
-            <div class="service-icon">
-                <img src="fashion and design.avif" alt="Alex Smith Profile">
+               
+                <p class="service-description">Comfortable and stylish furniture for your living space.</p>
             </div>
-            <h3 class="service-title">Fashion Design</h3>
-            <p class="service-description">"Our website offers a curated selection of fashion items that reflect both the latest trends
-                and timeless styles. From elegant evening wear to everyday casuals, we bring you pieces that
-                 suit every occasion and personality. Each item is chosen with care to ensure quality, comfort,
-                  and style, catering to the diverse tastes and preferences of our customers."</p>
-        </div>
+
+            <!-- Additional Service Cards -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <h3 class="service-title">Sports Equipment</h3>
+                    <img src="sports.jpeg" alt="Sports Equipment">
+                </div>
+               
+                <p class="service-description">"Our Sports Equipment range is crafted to support athletes and active individuals
+                     in achieving their performance goals. Whether you're training at the gym, playing your favorite sport, or 
+                     exploring the outdoors, our products ensure quality and durability.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <h3 class="service-title">Smart Gadgets</h3>
+                    <img src="gadget.jpeg" alt="Smart Gadgets">
+                </div>
+              
+                <p class="service-description">"Our Smart Gadgets collection brings you the latest in innovative technology designed 
+                    to enhance everyday living. From smart home assistants to wearable fitness trackers, each gadget is carefully 
+                    selected to provide convenience, connectivity, and advanced functionality. </p>
             </div>
         </div>
     </main>
